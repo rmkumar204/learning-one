@@ -1,0 +1,7 @@
+<div class="container  py-2 rounded">
+    @for (item of groceryItems; track $index) {
+        <ul class="list-group py-1 ">
+            <li class="list-group-item bg-transparent  "><a class="text-decoration-none text-info" role="button" [routerLink]="[item.productId]" routerLinkActive="router-link-active" >{{item.productName}}</a></li>
+        </ul>
+    }
+</div>

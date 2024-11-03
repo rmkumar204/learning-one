@@ -1,0 +1,311 @@
+<div class=" vh-100">
+    <!-- <p class="">Name:{{name}}</p>
+    <p>Age:{{age}}</p>
+    <p>City:{{city}}</p>
+    <p>Phone:{{phone}}</p>
+    <div>
+        @for (item of userDetails; track $index) {
+            <li>{{item.firstName}}{{item.lastName}}</li>
+        }
+    </div>
+<div [contentEditable]="isLoggedIn">
+    <img [src]="dataImage" alt="#tree">
+</div>
+<input type="text" [value]="player" placeholder="Enter Player Name" (change)="playerName($event)">
+<button (click)="addName()">Click</button>
+<table>
+    <thead><tr><td>Players</td></tr></thead>
+    <tbody>
+        @for (cricPlayer of players; track $index) {
+            <tr><td>{{cricPlayer}}</td></tr>
+        }
+    </tbody>
+</table> -->
+<div class="part1  ">
+    <nav class="navbar navbar-expand-lg bg-info-subtle">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"  >Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" >Link</a></li>
+                    <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" >Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">Action</a></li>
+                        <li><a href="#" class="dropdown-item">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a href="#" class="dropdown-item">Something else here</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item "><a href="#" class="nav-link disabled" >Disabled</a></li>
+                </ul>
+                <form action="" class="d-flex" role="search">
+                    <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search" >
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="part2 d-flex bg-light">
+    <div class="container side w-25 bg-dark border-2 border-light position-relative ">
+        <img ngSrc="assets/images/prabhakaran.jpeg" class="opacity-25" alt="prabhakaran" fill priority>
+       <div class="container mt-3 ">
+        <ul class="list-group list-group-flush ">
+            <li class="list-group-item bg-transparent "><a class="text-white text-decoration-none " [routerLink]="['/dashboard']" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a></li>
+            <li class="list-group-item bg-transparent"><a class="text-white text-decoration-none " [routerLink]="['/profile']" routerLinkActive="active" ariaCurrentWhenActive="page">Profile</a></li>
+            <li class="list-group-item bg-transparent"><a class="text-white text-decoration-none " [routerLink]="['/classes']" routerLinkActive="active" ariaCurrentWhenActive="page">Classes</a></li>
+            
+        </ul>
+       </div>
+        <div class="container mt-3 position-relative">
+            <router-outlet />
+        </div>
+       
+        @defer () {
+            <app-comments></app-comments>
+        }@placeholder {
+            <p>Future comments</p>
+        }@loading(minimum 2s) {
+            <p>Loading comments...</p>
+        }
+        <div class="position-absolute bottom-0 p-3 d-flex gap-3">
+            <input type="number" placeholder="Enter participant ID" class="form-control" [value]="winnerPriceID" (change)="getrandomWinnerId($event)">
+        <button type="button" class="btn btn-primary" (click)="getWinnerId()" data-bs-toggle="modal" data-bs-target="#winnerModal">OK</button>
+
+        <div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="WinnerModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="winnerModalLabel">Winner</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-body">
+                            <p><span class="text-danger">{{priceWinner?.participantNmae}}</span>! You won the price !!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+  
+    </div>
+    <div class="main w-75 bg-primary-subtle border-2 border-light py-3 ">
+        <div class="container px-4">
+            <div class=" border-dark mb-2 border-dark d-flex row ">
+                <div class="col-md-6 ">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Special title treatment</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go Somewhere</a>
+                        </div>
+                        <div class="card-footer text-muted">2 days ago</div>
+                    </div>
+                </div>
+                <div class=" col-md-6  bg-white d-flex align-items-center justify-content-center">
+                    <div id="carouselExampleInterval" class="carousel slide w-100 imgSize" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"   aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"   aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner h-100  rounded-3 py-2">
+                            <div class="carousel-item active  align-content-center h-100" data-bs-interval="1000"><img src="assets/images/trees.webp" alt="#" class=" w-100 h-100" ></div>
+                            <div class="carousel-item align-content-center h-100"><img src="assets/images/thanjai.jpeg" alt="#" class=" w-100 h-100 " ></div>
+                            <div class="carousel-item align-content-center h-100"><img src="assets/images/vayal.jpeg" alt="#" class="  w-100 h-100" ></div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class=" border-dark mb-2 border-dark  ">
+                <div class="bg-light p-3">
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
+
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
+
+                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+
+                        <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" disabled type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Disabled</button>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"><span class=" text-primary">HOME</span>&nbsp;This is some placeholder content the profiles tab's associated content. Clicking another tab will toggle the visibility of this one for the next. the tab javascript swaps classes to control the content visibility and styling.</div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0"><span class=" text-primary">PROFILE</span>&nbsp;This is some placeholder content the profiles tab's associated content. Clicking another tab will toggle the visibility of this one for the next. the tab javascript swaps classes to control the content visibility and styling.</div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0"><span class=" text-primary">CONTACT</span>&nbsp;This is some placeholder content the profiles tab's associated content. Clicking another tab will toggle the visibility of this one for the next. the tab javascript swaps classes to control the content visibility and styling.</div>
+                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0"><span class=" text-primary">DISABLED</span>&nbsp;This is some placeholder content the profiles tab's associated content. Clicking another tab will toggle the visibility of this one for the next. the tab javascript swaps classes to control the content visibility and styling.</div>
+                </div>   
+                </div>
+               
+            </div>
+            <div class=" border-dark mb-2 border-dark row">
+               <div class="col">
+                <div class="offcanvasImageSize">
+                    <div class=" p-2">
+                        <div class="d-flex align-item-center justify-content-center gap-2">
+                            <div class="profImg">
+                                <img class="w-100 h-100 shadow" src="assets/images/thanjai.jpeg" alt="">
+                            </div>
+                            <button class="btn btn-success w-100 shadow border-1 border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Admin</button>
+                        </div>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                               <h5> Right side panel shows for <span class="bg-primary rounded-3 text-dark p-2">Admin</span></h5><hr>
+                                @if (adminDetails.length!=0) {
+                                   <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>User Id</th>
+                                            <th>Firstname</th>
+                                            <th>Lastname</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (admin of adminDetails; track $index) {
+                                            <tr>
+                                                <td>{{admin['userId']}}</td>
+                                                <td>{{admin['firstName']}}</td>
+                                                <td>{{admin['lastName']}}</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>  
+                                }@else {
+                                    <p>No Admin Details !</p>
+                                }
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 ">
+                        <div class="d-flex align-item-center justify-content-center gap-2">
+                            <div class="profImg">
+                                <img class="w-100 h-100 shadow" src="assets/images/vayal.jpeg" alt="">
+                            </div>
+                            <button class="btn btn-info w-100 shadow border-1 border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightOne" aria-controls="offcanvasRightOne">Member</button>
+                        </div>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightOne" aria-labelledby="offcanvasRightOneLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightOneLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <h5>Right side panel shows for <span class="bg-primary rounded-3 text-dark p-2">Member</span></h5><hr>
+                                <div class="overflow-auto">
+                                    @if(cartsDetails.length!=0){
+                                        <table class="table table-striped text-nowrap vh-100 text-center">
+                                            <thead>
+                                                <tr>
+                                                    <td>ID</td>
+                                                    <td>Total</td>
+                                                    <td>Discounted Total</td>
+                                                    <td>User ID</td>
+                                                    <td>Total Products</td>
+                                                    <td>Total Quantity</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @for (cart of cartsDetails; track $index){
+                                                    <tr>
+                                                        <td>{{cart['id']}}</td>
+                                                        <td>{{cart['total']}}</td>
+                                                        <td>{{cart['discountedTotal']}}</td>
+                                                        <td>{{cart['userId']}}</td>
+                                                        <td>{{cart['totalProducts']}}</td>
+                                                        <td>{{cart['totalQuantity']}}</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }@else {
+                                        <p>No carts available !</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2  ">
+                        <div class="d-flex align-item-center justify-content-center gap-2">
+                            <div class="profImg ">
+                                <img class="w-100 h-100 shadow" src="assets/images/trees.webp" alt="">
+                            </div>
+                            <button class="btn btn-danger w-100 shadow border-1 border-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightTwo" aria-controls="offcanvasRightTwo">User</button>
+                        </div>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightTwo" aria-labelledby="offcanvasRightTwoLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasRightTwoLabel">Offcanvas right</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                Right side panel shows for <span class="bg-primary rounded-3 text-dark p-2">User</span>                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="  ">
+                    <ul class="list-group px-2 pt-3">
+                        <li class="list-group-item"><input type="checkbox" class="form-check-input me-1" value="" aria-label="...">First</li>
+                        <li class="list-group-item"><input type="checkbox" class="form-check-input me-1" value="" aria-label="...">Second</li>
+                        <li class="list-group-item"><input type="checkbox" class="form-check-input me-1" value="" aria-label="...">Third</li>
+                        <li class="list-group-item"><input type="checkbox" class="form-check-input me-1" value="" aria-label="...">Fourth</li>
+                        <li class="list-group-item"><input type="checkbox" class="form-check-input me-1" value="" aria-label="...">Fifth</li>
+                    </ul>
+    
+                </div>
+               </div>
+                <div class=" col">
+                    <div class="list-group">
+                        <a href="" class="list-group-item list-group-item-action active" aria-current="true">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading<small>3 days ago</small></h5>
+                            </div>
+                            <p class="mb-1">some placeholder content in a paragraph</p>
+                            <small>And some small print.</small>
+                        </a>
+                        <a href="" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading<small>3 days ago</small></h5>
+                            </div>
+                            <p class="mb-1">some placeholder content in a paragraph</p>
+                            <small>And some small print.</small>
+                        </a>
+                        <a href="" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading<small>3 days ago</small></h5>
+                            </div>
+                            <p class="mb-1">some placeholder content in a paragraph</p>
+                            <small>And some small print.</small>
+                        </a>
+                        <a href="" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">List group item heading<small>3 days ago</small></h5>
+                            </div>
+                            <p class="mb-1">some placeholder content in a paragraph</p>
+                            <small>And some small print.</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
